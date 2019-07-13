@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reid Mitchell</title>
+    <link>https://reidmitchell.net/</link>
+    <description>Recent content on Reid Mitchell</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://reidmitchell.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Pivotal UI</title>
+      <link>https://reidmitchell.net/projects/pivotal-ui/</link>
+      <pubDate>Mon, 01 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://reidmitchell.net/projects/pivotal-ui/</guid>
+      <description>For the first year and a half of my job at Pivotal, I worked on the team that maintained Pivotal UI, the company&amp;rsquo;s design system and component library.
+The library is open source, written in React and CSS, and can be found on GitHub. The documentation, plus examples of the components in use, can be found in our style guide.
+Learning to build and use a design system This was such a fun project to work on, and I cannot overstate how much I learned.</description>
+    </item>
+    
+    <item>
+      <title>Redraw</title>
+      <link>https://reidmitchell.net/projects/redraw/</link>
+      <pubDate>Wed, 27 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://reidmitchell.net/projects/redraw/</guid>
+      <description>Redraw is a tool for making pixel art. Try it out!
+The code is all on GitHub. It&amp;rsquo;s written in React and uses the HTML5 canvas for drawing.
+I started this project during a vacation at home. I was getting nostalgic for all the time I used to spend making drawings in MS Paint. I no longer have a Windows computer, so I went looking for a browser-based replacement. I found JsPaint, which is an amazing recreation of the old version of Paint that I loved.</description>
+    </item>
+    
+    <item>
+      <title>Writing your first webpage, pt. 1: HTML</title>
+      <link>https://reidmitchell.net/writing/writing-your-first-webpage-pt-1/</link>
+      <pubDate>Mon, 04 Dec 2017 17:19:16 -0800</pubDate>
+      
+      <guid>https://reidmitchell.net/writing/writing-your-first-webpage-pt-1/</guid>
+      <description>So, you want to build a website, but you don&amp;rsquo;t know where to start.
+Maybe you&amp;rsquo;ve heard something about HTML, but you aren&amp;rsquo;t sure what it is. Maybe you&amp;rsquo;ve never heard of it. Either way, this post will help you get started building websites!
+What is a website? A website is just a bunch of files, like the files on your computer. Each file is made up of some text that tells your browser (e.</description>
+    </item>
+    
+    <item>
+      <title>Wrapping your head around recursion</title>
+      <link>https://reidmitchell.net/writing/wrapping-your-head-around-recursion/</link>
+      <pubDate>Wed, 15 Nov 2017 05:17:36 +0000</pubDate>
+      
+      <guid>https://reidmitchell.net/writing/wrapping-your-head-around-recursion/</guid>
+      <description>Let&amp;rsquo;s start with an analogy.
+Imagine you&amp;rsquo;re standing in a long line of people waiting for something on a very foggy day. It&amp;rsquo;s so foggy that nobody in line can see further than one person ahead of them and one person behind them. You certainly can&amp;rsquo;t see the beginning of the line. But you&amp;rsquo;re growing impatient, so you would like to know your position in the line. Are you 5th or 500th?</description>
+    </item>
+    
+    <item>
+      <title>How I built this site</title>
+      <link>https://reidmitchell.net/writing/how-i-built-this-site/</link>
+      <pubDate>Sun, 08 Oct 2017 15:21:51 -0700</pubDate>
+      
+      <guid>https://reidmitchell.net/writing/how-i-built-this-site/</guid>
+      <description>I&amp;rsquo;m fascinated by the different technologies, languages, and methods people use to build websites. When I see a website I admire, I often spend time digging to see how it was built. So, I wanted to share the details behind how this site is made.
+There are tons of great options out there for this kind of thing, all with different strengths: Wordpress, Jekyll, Hexo, to name just a few.</description>
+    </item>
+    
+    <item>
+      <title>A new website (finally!)</title>
+      <link>https://reidmitchell.net/writing/a-new-website/</link>
+      <pubDate>Sat, 07 Oct 2017 05:17:36 +0000</pubDate>
+      
+      <guid>https://reidmitchell.net/writing/a-new-website/</guid>
+      <description>Welcome to my new website!
+After several years of designing and redesigning, building and rebuilding, deleting and recreating my personal website an absurd number of times (30?), all without ever putting any real content on it, I have decided that enough is enough. I&amp;rsquo;m settling on a simple design and an easy-to-use framework for building the site (more on that in this post!), so I can focus on what should really be the most important thing: the content.</description>
+    </item>
+    
+    <item>
+      <title>Pixers</title>
+      <link>https://reidmitchell.net/projects/pixers/</link>
+      <pubDate>Sat, 03 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://reidmitchell.net/projects/pixers/</guid>
+      <description>Pixers is a tool for creating generative art, pixel-by-pixel. You define a few parameters (color palette, number of pixers, etc.) and let the pixers draw you a picture. Even when using the same settings, no two pixer drawings are alike. Try it out!
+Here&amp;rsquo;s how I described it when I first made it:
+ Pixers are tiny (1px by 1px) creatures. They move completely randomly. To start, each pixer is randomly assigned a color from the chosen color palette.</description>
+    </item>
+    
+    <item>
+      <title>Hashtag Lonely</title>
+      <link>https://reidmitchell.net/projects/hashtag-lonely/</link>
+      <pubDate>Thu, 01 May 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://reidmitchell.net/projects/hashtag-lonely/</guid>
+      <description>I built a robot that complains on Twitter until you pay attention to it. When you do, it takes your picture and posts it to Twitter. But after this brief moment of happiness, it&amp;rsquo;s back to complaining again.
+The robot is powered by an Arduino running some Processing code that uses OpenCV for face detection and the Twitter API for posting online.
+This was my final project for a class called Robotics, Digital Media, &amp;amp; the Environment.</description>
+    </item>
+    
+    <item>
+      <title>Handmade film</title>
+      <link>https://reidmitchell.net/projects/handmade-film/</link>
+      <pubDate>Wed, 05 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://reidmitchell.net/projects/handmade-film/</guid>
+      <description>These three videos were made on Super 8mm film and hand-developed/hand-scratched/hand-colored. I made them for a class called Handmade Film, in which we were encouraged to experiment with different ways to intervene upon the film before and after developing it.
+The process generally involved shooting some footage, developing it in a darkroom, cutting/rearranging/scratching the film strips somehow, digitizing the footage with a telecine machine, and then doing final editing and sound design with Adobe Premiere.</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://reidmitchell.net/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://reidmitchell.net/about/</guid>
+      <description>I’m a software engineer and filmmaker currently living in San Francisco. I’m passionate about education, accessibility, and building experiences that make people&amp;rsquo;s lives a little easier or a little more enjoyable. My pronouns are he/him/his.
+These days, I’m especially interested in front-end web development (JavaScript, React, etc), building accessible user interfaces, and programming language design (compiler-writing, type-checking, etc).
+Prior to entering the real world, I grew up in a suburb of New York and went to school at Pomona College, where I majored in computer science and media studies.</description>
+    </item>
+    
+  </channel>
+</rss>
