@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A music video shot on Super 8mm film" />
+  <meta name="author" content="Reid Mitchell" />
+  <meta name="keywords"
+    content="software, engineer, film, portfolio,design, code, user experience, user interface, ux design, reid47, reidmit" />
+
+  <title>
+    Wounded Sky | Reid Mitchell
+  </title>
+  <link rel="canonical" href="https://reidmitchell.net/projects/wounded-sky/" />
+
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="https://reidmitchell.net/main.min.62b27b470625f26485fc82c3b67c5c364c07d8b1b185c3eecb330bbbc0d17f0a.css" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110801155-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-110801155-1');
+  </script>
+</head>
+
+<body>
+  <script>
+    var body = document.body, lightswitch, label;
+    var theme = localStorage.getItem('theme') || 'light';
+    body.className = theme;
+
+    function setLabel(theme) {
+      label = label || document.getElementById('lightswitch-label');
+      label.innerText = theme === 'dark' ? 'off' : 'on';
+    }
+
+    function toggleLights(evt) {
+      evt.preventDefault();
+
+      var nextTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+      body.className = nextTheme;
+      setLabel(nextTheme);
+      localStorage.setItem('theme', nextTheme);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setLabel(theme);
+      lightswitch = lightswitch || document.getElementById('lightswitch');
+      lightswitch.addEventListener('click', toggleLights);
+    })
+  </script>
+
+  <nav role="navigation" class="primary-nav">
+    <h1 class="site-title">
+      <a href="/">Reid Mitchell</a>
+    </h1>
+
+    <div class="flex-spacer"></div>
+
+    <ul>
+      <li><a href="/projects/">projects</a></li>
+      <li><a href="/writing/">writing</a></li>
+      <li><a href="/about/">about</a></li>
+      <li><a href="#" id="lightswitch" role="button">lights: <span id="lightswitch-label">on</span></a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+<article>
+  <header>
+    <h1>Wounded Sky</h1>
+
+    <small>
+      <span class="article-date">January 2013</span>
+      <nav class="article-tags" aria-label="Tags">
+         <a class="tag inline" href="/tags/8mm">8mm</a> <a class="tag inline" href="/tags/film">film</a> <a class="tag inline" href="/tags/music-video">music video</a>
+      </nav>
+    </small>
+  </header>
+
+  <p>I made this music video for Ruby Reilly&rsquo;s original song &ldquo;Wounded Sky.&rdquo; Check out more of Ruby&rsquo;s music <a href="https://rubyreilly.bandcamp.com/">here</a>.</p>
+
+<div style="position: relative; padding-bottom: 75%; height: 0; overflow: hidden;">
+  <iframe src="//player.vimeo.com/video/57974310"
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" webkitallowfullscreen
+    mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+<p>Ruby is from my hometown. I was home from college for Christmas break, I had recently acquired a Super 8mm film camera from a garage sale, and I loved Ruby&rsquo;s music. I felt this song especially could fit with the analog film aesthetic, so we set out to make this video happen.</p>
+
+<p>I had never shot a film camera before. At first, I wasn&rsquo;t even sure if the camera worked; I had to take it to a camera repair shop where they scrubbed old battery acid out of it. But we got it working!</p>
+
+<p>I bought two 50&rsquo; reels of film, which gave us about 7 minutes of footage total. Since the song is almost 5 minutes long, we were lucky that most of the footage turned out usable.</p>
+
+<p>After getting the film developed, I didn&rsquo;t have the equipment (or experience) to splice the film by hand. I wanted to digitize it so I could edit on my computer with Final Cut Pro. Plus, we would need to add the digital audio at some point anyway.</p>
+
+<p>To do the digitizing, I borrowed a projector and projected the film against my bedroom wall so I could record it with a digital camera. Here&rsquo;s a picture:</p>
+
+<p><img src="/images/wounded-sky-projection.jpg" alt="footage projected onto my wall" /></p>
+
+<p>This was a ton of fun. I accidentally burned up some of the film by leaving it too close to the bulb for too long, but I got all of it onto my computer.</p>
+
+<p>At the very end of the video, you can see some actual footage of the film burning up as I recorded. And I incorporated the real sounds of me turning the projector on and off. I was really happy with the effects that these created.</p>
+
+</article>
+
+<footer>
+  
+  <div class="prev-link"></div>
+  
+
+  
+  <a class="next-link" href="/projects/handmade-film/">
+    <div>next:</div>
+    <b>Handmade Film</b>
+  </a>
+  
+</footer>
+
+</main>
+</body>
+
+</html>
