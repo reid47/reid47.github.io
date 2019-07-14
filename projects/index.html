@@ -18,9 +18,9 @@
   
     <link rel="alternate" type="application/rss+xml" href="https://reidmitchell.net/projects/index.xml" title="Reid Mitchell" />
     
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
   
-  <link rel="stylesheet" href="https://reidmitchell.net/main.min.3ce15fe43c6c1ebe697b63592ae3a8cd73e0fd24341f70bec43e90e0bcd5ffa2.css" />
+  <link rel="stylesheet" href="https://reidmitchell.net/main.min.d3f4d98b8fc075dcb8a9e370182014d04a8f6f4b80950fe40b850cca7c20064c.css" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110801155-1"></script>
   <script>
@@ -34,51 +34,58 @@
 </head>
 
 <body>
-  <nav role="navigation">
+  <script>
+    var body = document.body, lightswitch, label;
+    var theme = localStorage.getItem('theme') || 'light';
+    body.className = theme;
+
+    function setLabel(theme) {
+      label = label || document.getElementById('lightswitch-label');
+      label.innerText = theme === 'dark' ? 'off' : 'on';
+    }
+
+    function toggleLights(evt) {
+      evt.preventDefault();
+
+      var nextTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+      body.className = nextTheme;
+      setLabel(nextTheme);
+      localStorage.setItem('theme', nextTheme);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setLabel(theme);
+      lightswitch = lightswitch || document.getElementById('lightswitch');
+      lightswitch.addEventListener('click', toggleLights);
+    })
+  </script>
+
+  <nav role="navigation" class="primary-nav">
     <h1 class="site-title">
       <a href="/">Reid Mitchell</a>
     </h1>
 
-    <ul>
-      <li><a href="/writing/">writing</a></li>
-      <li><a href="/projects/">projects</a></li>
-      <li><a href="/about/">about</a></li>
-    </ul>
-
     <div class="flex-spacer"></div>
 
-    <ul class="social">
-      <li>
-        <a href="https://twitter.com/reidmit" target="_blank" rel="noreferrer">twitter</a>
-      </li>
-      <li>
-        <a href="https://github.com/reid47" target="_blank" rel="noreferrer">github</a>
-      </li>
-      <li>
-        <a href="https://linkedin.com/in/reidmitchell" target="_blank" rel="noreferrer">linkedin</a>
-      </li>
+    <ul>
+      <li><a href="/projects/">projects</a></li>
+      <li><a href="/writing/">writing</a></li>
+      <li><a href="/about/">about</a></li>
+      <li><a href="#" id="lightswitch" role="button">lights: <span id="lightswitch-label">on</span></a></li>
     </ul>
   </nav>
 
-  <div class="main-wrapper">
-    <main>
+  <main>
 
-<h1>Projects</h1>
-
-<p>
-  A bunch of the projects I've worked on over the years. They span several
-  different media (code, film, design) and were made in several different contexts (for fun, for school, for work).
-</p>
-<p>
-  Although I'm proud of these projects, I feel the most interesting things about many of them are the mistakes I
-  made and the lessons I learned while working on them. Those are what I hope to highlight
-  here.
-</p>
+<h1 class="list-heading">Projects</h1>
 
 
 <article>
   <a href="https://reidmitchell.net/projects/pivotal-ui/" class="summary">
-    <span>Pivotal UI</span>
+    <div>
+      <h2>Pivotal UI</h2>
+      Design system &amp; component library for Pivotal
+    </div>
     <ul>
       <li class="tag">css</li><li class="tag">design systems</li><li class="tag">react</li>
     </ul>
@@ -87,7 +94,10 @@
 
 <article>
   <a href="https://reidmitchell.net/projects/redraw/" class="summary">
-    <span>Redraw</span>
+    <div>
+      <h2>Redraw</h2>
+      A pixel art drawing tool
+    </div>
     <ul>
       <li class="tag">canvas</li><li class="tag">javascript</li><li class="tag">react</li>
     </ul>
@@ -96,7 +106,10 @@
 
 <article>
   <a href="https://reidmitchell.net/projects/pixers/" class="summary">
-    <span>Pixers</span>
+    <div>
+      <h2>Pixers</h2>
+      A generative art project in JavaScript
+    </div>
     <ul>
       <li class="tag">canvas</li><li class="tag">generative art</li><li class="tag">javascript</li>
     </ul>
@@ -105,7 +118,10 @@
 
 <article>
   <a href="https://reidmitchell.net/projects/hashtag-lonely/" class="summary">
-    <span>Hashtag Lonely</span>
+    <div>
+      <h2>Hashtag Lonely</h2>
+      A robotic art project
+    </div>
     <ul>
       <li class="tag">arduino</li><li class="tag">processing</li><li class="tag">robotics</li>
     </ul>
@@ -114,7 +130,10 @@
 
 <article>
   <a href="https://reidmitchell.net/projects/handmade-film/" class="summary">
-    <span>Handmade film</span>
+    <div>
+      <h2>Handmade Film</h2>
+      Experiments with hand-processed 8mm film
+    </div>
     <ul>
       <li class="tag">8mm</li><li class="tag">film</li><li class="tag">video</li>
     </ul>
@@ -123,7 +142,6 @@
 
 
 </main>
-  </div>
 </body>
 
 </html>

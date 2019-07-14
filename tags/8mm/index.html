@@ -18,9 +18,9 @@
   
     <link rel="alternate" type="application/rss+xml" href="https://reidmitchell.net/tags/8mm/index.xml" title="Reid Mitchell" />
     
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
   
-  <link rel="stylesheet" href="https://reidmitchell.net/main.min.3ce15fe43c6c1ebe697b63592ae3a8cd73e0fd24341f70bec43e90e0bcd5ffa2.css" />
+  <link rel="stylesheet" href="https://reidmitchell.net/main.min.d3f4d98b8fc075dcb8a9e370182014d04a8f6f4b80950fe40b850cca7c20064c.css" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110801155-1"></script>
   <script>
@@ -34,34 +34,48 @@
 </head>
 
 <body>
-  <nav role="navigation">
+  <script>
+    var body = document.body, lightswitch, label;
+    var theme = localStorage.getItem('theme') || 'light';
+    body.className = theme;
+
+    function setLabel(theme) {
+      label = label || document.getElementById('lightswitch-label');
+      label.innerText = theme === 'dark' ? 'off' : 'on';
+    }
+
+    function toggleLights(evt) {
+      evt.preventDefault();
+
+      var nextTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+      body.className = nextTheme;
+      setLabel(nextTheme);
+      localStorage.setItem('theme', nextTheme);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setLabel(theme);
+      lightswitch = lightswitch || document.getElementById('lightswitch');
+      lightswitch.addEventListener('click', toggleLights);
+    })
+  </script>
+
+  <nav role="navigation" class="primary-nav">
     <h1 class="site-title">
       <a href="/">Reid Mitchell</a>
     </h1>
 
-    <ul>
-      <li><a href="/writing/">writing</a></li>
-      <li><a href="/projects/">projects</a></li>
-      <li><a href="/about/">about</a></li>
-    </ul>
-
     <div class="flex-spacer"></div>
 
-    <ul class="social">
-      <li>
-        <a href="https://twitter.com/reidmit" target="_blank" rel="noreferrer">twitter</a>
-      </li>
-      <li>
-        <a href="https://github.com/reid47" target="_blank" rel="noreferrer">github</a>
-      </li>
-      <li>
-        <a href="https://linkedin.com/in/reidmitchell" target="_blank" rel="noreferrer">linkedin</a>
-      </li>
+    <ul>
+      <li><a href="/projects/">projects</a></li>
+      <li><a href="/writing/">writing</a></li>
+      <li><a href="/about/">about</a></li>
+      <li><a href="#" id="lightswitch" role="button">lights: <span id="lightswitch-label">on</span></a></li>
     </ul>
   </nav>
 
-  <div class="main-wrapper">
-    <main>
+  <main>
 
 <h1>Tagged with: <span class="tag">8mm</span></h1>
 
@@ -75,7 +89,10 @@
 
 <article>
   <a href="https://reidmitchell.net/projects/handmade-film/" class="summary">
-    <span>Handmade film</span>
+    <div>
+      <h2>Handmade Film</h2>
+      Experiments with hand-processed 8mm film
+    </div>
     <ul>
       <li class="tag">8mm</li><li class="tag">film</li><li class="tag">video</li>
     </ul>
@@ -85,7 +102,6 @@
 
 
 </main>
-  </div>
 </body>
 
 </html>

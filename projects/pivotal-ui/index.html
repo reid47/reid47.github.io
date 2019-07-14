@@ -15,9 +15,9 @@
 
   <link rel="icon" type="image/png" href="/favicon.png" />
 
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
   
-  <link rel="stylesheet" href="https://reidmitchell.net/main.min.3ce15fe43c6c1ebe697b63592ae3a8cd73e0fd24341f70bec43e90e0bcd5ffa2.css" />
+  <link rel="stylesheet" href="https://reidmitchell.net/main.min.d3f4d98b8fc075dcb8a9e370182014d04a8f6f4b80950fe40b850cca7c20064c.css" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110801155-1"></script>
   <script>
@@ -31,37 +31,60 @@
 </head>
 
 <body>
-  <nav role="navigation">
+  <script>
+    var body = document.body, lightswitch, label;
+    var theme = localStorage.getItem('theme') || 'light';
+    body.className = theme;
+
+    function setLabel(theme) {
+      label = label || document.getElementById('lightswitch-label');
+      label.innerText = theme === 'dark' ? 'off' : 'on';
+    }
+
+    function toggleLights(evt) {
+      evt.preventDefault();
+
+      var nextTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+      body.className = nextTheme;
+      setLabel(nextTheme);
+      localStorage.setItem('theme', nextTheme);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      setLabel(theme);
+      lightswitch = lightswitch || document.getElementById('lightswitch');
+      lightswitch.addEventListener('click', toggleLights);
+    })
+  </script>
+
+  <nav role="navigation" class="primary-nav">
     <h1 class="site-title">
       <a href="/">Reid Mitchell</a>
     </h1>
 
-    <ul>
-      <li><a href="/writing/">writing</a></li>
-      <li><a href="/projects/">projects</a></li>
-      <li><a href="/about/">about</a></li>
-    </ul>
-
     <div class="flex-spacer"></div>
 
-    <ul class="social">
-      <li>
-        <a href="https://twitter.com/reidmit" target="_blank" rel="noreferrer">twitter</a>
-      </li>
-      <li>
-        <a href="https://github.com/reid47" target="_blank" rel="noreferrer">github</a>
-      </li>
-      <li>
-        <a href="https://linkedin.com/in/reidmitchell" target="_blank" rel="noreferrer">linkedin</a>
-      </li>
+    <ul>
+      <li><a href="/projects/">projects</a></li>
+      <li><a href="/writing/">writing</a></li>
+      <li><a href="/about/">about</a></li>
+      <li><a href="#" id="lightswitch" role="button">lights: <span id="lightswitch-label">on</span></a></li>
     </ul>
   </nav>
 
-  <div class="main-wrapper">
-    <main>
+  <main>
 
 <article>
-  <h1>Pivotal UI</h1>
+  <header>
+    <h1>Pivotal UI</h1>
+
+    <small>
+      <span class="article-date">April, 2019</span>
+      <nav class="article-tags" aria-label="Tags">
+         <a class="tag inline" href="/tags/css">css</a> <a class="tag inline" href="/tags/design-systems">design systems</a> <a class="tag inline" href="/tags/react">react</a>
+      </nav>
+    </small>
+  </header>
 
   
 
@@ -69,11 +92,13 @@
 
 <p>The library is open source, written in React and CSS, and can be found <a href="https://github.com/pivotal-cf/pivotal-ui">on GitHub</a>. The documentation, plus examples of the components in use, can be found in our <a href="https://styleguide.pivotal.io/">style guide</a>.</p>
 
+<p>This was such a fun project to work on, and I cannot overstate how much I learned.</p>
+
 <p><img src="/images/pivotal-ui.png" alt="screenshot Pivotal UI style guide" /></p>
 
 <h2 id="learning-to-build-and-use-a-design-system">Learning to build and use a design system</h2>
 
-<p>This was such a fun project to work on, and I cannot overstate how much I learned. Prior to joining Pivotal, I had done a lot of front-end web development in HTML and CSS, but I had never worked with React.</p>
+<p>Prior to joining Pivotal, I had done a lot of front-end web development in HTML and CSS, but I had never worked with React.</p>
 
 <p>On this team, I got to hit the ground running as both an author and a consumer of our library (since my team also maintained a React app that used the design system). I learned what design systems are, why they&rsquo;re useful, and how hard it can be to drive usage and consistency across lots of teams with different requirements and priorities.</p>
 
@@ -95,18 +120,9 @@
 
 <p>Although I have now moved on to another team, meaning my priorities are mostly elsewhere, I&rsquo;m still following the project closely. I&rsquo;m excited to see where it goes next!</p>
 
-
-  <small>
-    April 1, 2019
-    •
-    510 words
-    •
-    tags: <a href="/tags/react">react</a> <a href="/tags/css">css</a> <a href="/tags/design-systems">design systems</a> 
-  </small>
 </article>
 
 </main>
-  </div>
 </body>
 
 </html>
