@@ -38,6 +38,29 @@
   </url>
   
   <url>
+    <loc>https://reidmitchell.net/writing/asynchronous-coffee-making-with-javascript/</loc>
+    <lastmod>2018-10-01T12:23:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://reidmitchell.net/writing/</loc>
+    <lastmod>2018-10-01T12:23:47+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://reidmitchell.net/tags/javascript/</loc>
+    <lastmod>2018-10-01T12:23:47+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://reidmitchell.net/tags/promises/</loc>
+    <lastmod>2018-10-01T12:23:47+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://reidmitchell.net/projects/redraw/</loc>
     <lastmod>2017-12-27T00:00:00+00:00</lastmod>
   </url>
@@ -49,20 +72,8 @@
   </url>
   
   <url>
-    <loc>https://reidmitchell.net/tags/javascript/</loc>
-    <lastmod>2017-12-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://reidmitchell.net/writing/wrapping-your-head-around-recursion/</loc>
     <lastmod>2017-11-15T05:17:36+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://reidmitchell.net/writing/</loc>
-    <lastmod>2017-11-15T05:17:36+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
