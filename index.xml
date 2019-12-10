@@ -6,10 +6,20 @@
     <description>Recent content on Reid Mitchell</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 01 Sep 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://reidmitchell.net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>A2B</title>
+      <link>https://reidmitchell.net/projects/a2b/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://reidmitchell.net/projects/a2b/</guid>
+      <description>With A2B, I designed the user experience and user interface for a travel app that would eliminate the frustrating or painful parts of travel planning. As the sole designer on the project, I did the research, prototyping, testing, and final wireframes over the course of three weeks.
+The idea I started with a hypothesis. People love to dream of taking vacations. We have fun coming up with what these trips might look like: where we&amp;rsquo;ll go, what we&amp;rsquo;ll eat, what we&amp;rsquo;ll do.</description>
+    </item>
     
     <item>
       <title>Pivotal UI</title>
@@ -120,9 +130,9 @@ The process involved shooting some footage, developing it in a darkroom, cutting
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://reidmitchell.net/about/</guid>
-      <description>Hi, I&amp;rsquo;m Reid! I’m a software engineer and filmmaker currently living in San Francisco. I’m passionate about education, accessibility, and building experiences that make people&amp;rsquo;s lives a little easier or a little more enjoyable. My pronouns are he/him/his.
+      <description>Hi, I&amp;rsquo;m Reid! I’m a software engineer, designer, and filmmaker currently living in San Francisco. I’m passionate about education, accessibility, and building experiences that make people&amp;rsquo;s lives a little easier or a little more enjoyable. My pronouns are he/him/his.
 These days, I’m especially interested in front-end web development (JavaScript, React, etc), building accessible user interfaces, and programming language design (compiler-writing, type-checking, etc).
-Prior to entering the real world, I grew up in a suburb of New York and went to school at Pomona College, where I majored in computer science and media studies.</description>
+Prior to entering the real world, I grew up in a suburb of New York and went to school at Pomona College, where I majored in computer science and film.</description>
     </item>
     
   </channel>
