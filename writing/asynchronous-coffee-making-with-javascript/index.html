@@ -112,7 +112,7 @@ https://github.com/reid47/website
 
 <h2 id="defining-some-terms">Defining some terms</h2>
 
-<p>If you&rsquo;ve never heard the word &ldquo;asynchronous,&rdquo; that&rsquo;s okay, too! Let&rsquo;s start by defining it&rsquo;s opposite, &ldquo;synchronous.&rdquo;</p>
+<p>If you&rsquo;ve never heard the word &ldquo;asynchronous,&rdquo; that&rsquo;s okay, too! Let&rsquo;s start by defining its opposite, &ldquo;synchronous.&rdquo;</p>
 
 <p>A <strong>synchronous</strong> series of events is one that happens in a clearly defined order. Only one event ever happens at a time, and the next event does not start until the previous event has finished.</p>
 
@@ -165,11 +165,11 @@ https://github.com/reid47/website
 
 <p>That last point is important: if a particular order is slow for some reason (maybe they wanted almond milk, which is kept in the back room), other orders are <strong>not blocked</strong> by it. Other baristas can continue working while one of them runs to the back room. In the synchronous example, the whole line would have to wait for Sarah to go get the almond milk for the person at the front.</p>
 
-<p>This is good news for Sarah, but it becomes a little trickier to mode this scenario in JavaScript. Let&rsquo;s explore a few ways.</p>
+<p>This is good news for Sarah, but it becomes a little trickier to model this scenario in JavaScript. Let&rsquo;s explore a few ways.</p>
 
 <h3 id="using-callbacks">Using callbacks</h3>
 
-<p>The oldest way that people did asynchronous programming in JavaScript was using <strong>callbacks</strong>. This refers to the pattern of passing a function (the callback) as an argument to an asynchronous function. When the asynchronous function completes, it will call the callback function with the result.</p>
+<p>The original way to do asynchronous programming in JavaScript was using <strong>callbacks</strong>. This refers to the pattern of passing a function (the callback) as an argument to an asynchronous function. When the asynchronous function completes, it will call the callback function with the result.</p>
 
 <p>Here&rsquo;s what it looks like:</p>
 <div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="k">while</span> <span class="p">(</span><span class="nx">queue</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
@@ -178,8 +178,8 @@ https://github.com/reid47/website
 <span class="p">}</span>
 
 <span class="kd">function</span> <span class="nx">handleCustomer</span><span class="p">(</span><span class="nx">customer</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">takeOrder</span><span class="p">(</span><span class="nx">customer</span><span class="p">,</span> <span class="p">(</span><span class="nx">order</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-    <span class="nx">fillCup</span><span class="p">(</span><span class="nx">order</span><span class="p">,</span> <span class="p">(</span><span class="nx">cup</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">takeOrder</span><span class="p">(</span><span class="nx">customer</span><span class="p">,</span> <span class="nx">order</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">fillCup</span><span class="p">(</span><span class="nx">order</span><span class="p">,</span> <span class="nx">cup</span> <span class="p">=&gt;</span> <span class="p">{</span>
       <span class="nx">serveCustomer</span><span class="p">(</span><span class="nx">customer</span><span class="p">,</span> <span class="nx">cup</span><span class="p">);</span>
     <span class="p">});</span>
   <span class="p">});</span>
@@ -187,7 +187,7 @@ https://github.com/reid47/website
 </code></pre></div>
 <p>Previously, our <code>takeOrder</code> function received a <code>customer</code> as an argument and returned an <code>order</code>. This made sense when <code>takeOrder</code> was always performed by the same person, so we had to block the rest of the loop until <code>takeOrder</code> was done.</p>
 
-<p>But now, with multiple baristas, we know that <code>takeOrder</code> is asynchronous. It should not block the whole loop. We achieve that by moving the following steps into nested callback functions. Now, <code>takeOrder</code> does not actually return a value: instead, it passes it&rsquo;s &ldquo;return value&rdquo; (the <code>order</code>) as an argument to its callback. The same applies for <code>fillCup</code>.</p>
+<p>But now, with multiple baristas, we know that <code>takeOrder</code> should not block the whole loop. We achieve that by moving the following steps into nested callback functions. Now, <code>takeOrder</code> does not actually return a value: instead, it passes its &ldquo;return value&rdquo; (the <code>order</code>) as an argument to its callback. The same applies for <code>fillCup</code>.</p>
 
 <p>By using asynchronous functions with callbacks, we can make sure that the sequence of events is still the same for each customer (<code>takeOrder</code>, then <code>fillCup</code>, then <code>serveCustomer</code>), but all the baristas can be busy working on orders at the same time.</p>
 
@@ -201,8 +201,8 @@ https://github.com/reid47/website
 
 <span class="kd">function</span> <span class="nx">handleCustomer</span><span class="p">(</span><span class="nx">customer</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">try</span> <span class="p">{</span>
-    <span class="nx">takeOrder</span><span class="p">(</span><span class="nx">customer</span><span class="p">,</span> <span class="p">(</span><span class="nx">order</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
-      <span class="nx">fillCup</span><span class="p">(</span><span class="nx">order</span><span class="p">,</span> <span class="p">(</span><span class="nx">cup</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">takeOrder</span><span class="p">(</span><span class="nx">customer</span><span class="p">,</span> <span class="nx">order</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">fillCup</span><span class="p">(</span><span class="nx">order</span><span class="p">,</span> <span class="nx">cup</span> <span class="p">=&gt;</span> <span class="p">{</span>
         <span class="nx">serveCustomer</span><span class="p">(</span><span class="nx">customer</span><span class="p">,</span> <span class="nx">cup</span><span class="p">);</span>
       <span class="p">});</span>
     <span class="p">});</span>
@@ -237,7 +237,7 @@ https://github.com/reid47/website
   <span class="p">});</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Now, each callback function expects two arguments: an error from the previous step, and the &ldquo;return value&rdquo; from the previous step. If the error is defined, it means something went wrong, so we <code>apologizeToCustomer</code> and return early, without calling the next function in the sequence.</p>
+<p>Now, each callback function expects two arguments: an error from the previous step, and the &ldquo;return value&rdquo; from the previous step. If the error is defined, it means something went wrong, so we <code>apologizeToCustomer</code> and return early without calling the next function in the sequence.</p>
 
 <p>Just like asynchronous functions using callbacks <strong>do not return any values</strong>, they also <strong>do not throw any errors</strong>. Instead, they just pass these things into their callback function to be handled at the next step.</p>
 
@@ -284,7 +284,7 @@ https://github.com/reid47/website
   <span class="k">try</span> <span class="p">{</span>
     <span class="k">const</span> <span class="nx">order</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">takeOrder</span><span class="p">(</span><span class="nx">customer</span><span class="p">);</span>
     <span class="k">const</span> <span class="nx">cup</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">fillCup</span><span class="p">(</span><span class="nx">order</span><span class="p">);</span>
-    <span class="nx">serveCustomer</span><span class="p">(</span><span class="nx">customer</span><span class="p">,</span> <span class="nx">cup</span><span class="p">);</span>
+    <span class="kr">await</span> <span class="nx">serveCustomer</span><span class="p">(</span><span class="nx">customer</span><span class="p">,</span> <span class="nx">cup</span><span class="p">);</span>
   <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">apologizeToCustomer</span><span class="p">(</span><span class="nx">customer</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
   <span class="p">}</span>
@@ -302,7 +302,7 @@ https://github.com/reid47/website
 
 <p>There are places where asynchronous programming makes a lot of sense. In our coffee shop example, it didn&rsquo;t make sense for Sarah to be the only one handling all of those customers, since it meant that every customer had to wait for Sarah to complete all the steps for all the customers before them in order to</p>
 
-<p>Likewise, <strong>we often don&rsquo;t want to block the execution of our code</strong> while we&rsquo;re waiting for some function to return. For example, on a page in a web app, we might make a request to an API to fetch the data for a graph. We don&rsquo;t know how long it will take for the request to finish, and we have more work to do. We have to render the rest of the page, maybe with an empty graph for now, and we want it to be interactive as soon as possible (so buttons work, and the page doesn&rsquo;t feel frozen). We want to say, &ldquo;fill in the graph whenever we get the data, but keep doing everything else in the meantime.&rdquo; Asynchronous programming lets us do that.</p>
+<p>Likewise, <strong>we often don&rsquo;t want to block the execution of our code</strong> while we&rsquo;re waiting for some function to return. For example, on a page in a web app, we might make a request to an API to fetch the data for a graph. We don&rsquo;t know how long it will take for the request to finish, and we have more work to do. We have to render the rest of the page, maybe with an empty graph for now, and we want it to be interactive as soon as possible (so the page doesn&rsquo;t feel frozen). We want to say, &ldquo;fill in the graph whenever we get the data, but keep doing everything else in the meantime.&rdquo; Asynchronous programming lets us do that.</p>
 
 <p>This is especially important with things like network requests, since we can&rsquo;t be sure how long they will take: What if your internet connection is slow or flaky? Using asynchronous functions lets us schedule some work to be done whenever the request completes, but doesn&rsquo;t block the rest of our code on it.</p>
 
